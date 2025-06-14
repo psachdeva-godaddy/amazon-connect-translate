@@ -1,0 +1,121 @@
+{
+  "name": "amazon-connect-translate",
+  "version": "0.0.0",
+  "description": "A basic gasket app",
+  "scripts": {
+    "analyze": "GASKET_ENV=local.analyze next build",
+    "build": "next build",
+    "start": "NODE_OPTIONS='--import @godaddy/gasket-otel/register' NEXT_OTEL_VERBOSE=1 npm run start:https & next start",
+    "local": "npm run local:https & next dev",
+    "preview": "npm run build && npm run start",
+    "start:https": "node server.js",
+    "local:https": "nodemon server.js",
+    "lint": "eslint --ext .js,.jsx,.cjs .",
+    "lint:fix": "npm run lint -- --fix",
+    "stylelint": "stylelint \"**/*.(css|scss)\"",
+    "stylelint:fix": "npm run stylelint -- --fix",
+    "posttest": "npm run lint && npm run stylelint"
+  },
+  "dependencies": {
+    "@gasket/assets": "7.4.1",
+    "@gasket/core": "7.5.0",
+    "@gasket/data": "7.4.1",
+    "@gasket/nextjs": "7.5.1",
+    "@gasket/plugin-command": "^7.4.0",
+    "@gasket/plugin-data": "^7.4.1",
+    "@gasket/plugin-dynamic-plugins": "^7.3.7",
+    "@gasket/plugin-https-proxy": "^7.3.10",
+    "@gasket/plugin-logger": "^7.3.4",
+    "@gasket/plugin-nextjs": "^7.5.4",
+    "@gasket/plugin-webpack": "^7.3.4",
+    "@gasket/plugin-winston": "^7.3.4",
+    "@gasket/request": "7.4.1",
+    "@gasket/utils": "7.4.0",
+    "@godaddy/browserslist-config": "^3.1.0",
+    "@godaddy/gasket-auth": "3.3.7",
+    "@godaddy/gasket-next": "3.4.0",
+    "@godaddy/gasket-plugin-auth": "^3.3.6",
+    "@godaddy/gasket-plugin-dev-certs": "^3.3.5",
+    "@godaddy/gasket-plugin-otel": "^3.3.5",
+    "@godaddy/gasket-plugin-security": "^3.3.5",
+    "@godaddy/gasket-plugin-self-certs": "^3.3.4",
+    "@godaddy/gasket-plugin-traffic": "^3.4.0",
+    "@godaddy/gasket-plugin-uxp": "^3.4.0",
+    "@godaddy/gasket-plugin-visitor": "^3.3.4",
+    "@godaddy/react-mintl": "^3.1.1",
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/resources": "^1.30.1",
+    "@opentelemetry/semantic-conventions": "^1.30.0",
+    "@ux/box": "^2400.16.0",
+    "@ux/card": "^2400.16.0",
+    "@ux/icon": "^2400.14.2",
+    "@ux/intents": "^2400.11.0",
+    "@ux/pivot": "^2400.16.0",
+    "@vercel/otel": "^1.12.0",
+    "next": "^14.2.24",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-transition-group": "^4.4.5",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@babel/core": ">=7",
+    "@gasket/plugin-analyze": "^7.3.5",
+    "@gasket/plugin-metadata": "^7.4.2",
+    "@godaddy/postcss-merge-selectors": "^1.0.1",
+    "@testing-library/react": "^14.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-godaddy-react": "^9.1.0",
+    "eslint-config-next": "^13.5.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "file-loader": "^6.2.0",
+    "nodemon": "^3.1.9",
+    "postcss": "^8.5.3",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.8.3",
+    "sass": "^1.85.0",
+    "stylelint": "^15",
+    "stylelint-config-godaddy": "^0.6.0",
+    "typescript": "^5.8.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.98.0"
+  },
+  "type": "module",
+  "browserslist": [
+    "extends @godaddy/browserslist-config"
+  ],
+  "postcss": {
+    "plugins": {
+      "postcss-flexbugs-fixes": {},
+      "postcss-preset-env": {
+        "autoprefixer": {
+          "flexbox": "no-2009"
+        },
+        "stage": 3,
+        "features": {
+          "custom-properties": false
+        }
+      },
+      "@godaddy/postcss-merge-selectors": {
+        "matchers": [
+          "^\\*$"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "godaddy-react",
+      "next"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-godaddy"
+    ]
+  },
+  "eslintIgnore": [
+    "coverage/",
+    "build/"
+  ]
+}
