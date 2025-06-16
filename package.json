@@ -1,7 +1,7 @@
 {
   "name": "amazon-connect-translate",
-  "version": "0.0.0",
-  "description": "A basic gasket app",
+  "version": "0.1.0",
+  "description": "Amazon Connect Chat with real-time translation",
   "scripts": {
     "analyze": "GASKET_ENV=local.analyze next build",
     "build": "next build",
@@ -17,6 +17,11 @@
     "posttest": "npm run lint && npm run stylelint"
   },
   "dependencies": {
+    "@aws-amplify/auth": "^6.0.23",
+    "@aws-amplify/core": "^6.5.3",
+    "@aws-amplify/predictions": "^6.0.23",
+    "@aws-amplify/storage": "6.0.23",
+    "@aws-amplify/ui-react": "^6.1.6",
     "@gasket/assets": "7.4.1",
     "@gasket/core": "7.5.0",
     "@gasket/data": "7.4.1",
@@ -32,7 +37,7 @@
     "@gasket/request": "7.4.1",
     "@gasket/utils": "7.4.0",
     "@godaddy/browserslist-config": "^3.1.0",
-    "@godaddy/gasket-auth": "3.3.7",
+    "@godaddy/gasket-auth": "3.3.8",
     "@godaddy/gasket-next": "3.4.0",
     "@godaddy/gasket-plugin-auth": "^3.3.6",
     "@godaddy/gasket-plugin-dev-certs": "^3.3.5",
@@ -52,14 +57,19 @@
     "@ux/intents": "^2400.11.0",
     "@ux/pivot": "^2400.16.0",
     "@vercel/otel": "^1.12.0",
+    "amazon-connect-chatjs": "^2.2.4",
+    "amazon-connect-streams": "^2.14.0",
+    "aws-amplify": "^6.6.2",
     "next": "^14.2.24",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hooks-global-state": "^2.1.0",
     "react-transition-group": "^4.4.5",
     "winston": "^3.17.0"
   },
   "devDependencies": {
     "@babel/core": ">=7",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@gasket/plugin-analyze": "^7.3.5",
     "@gasket/plugin-metadata": "^7.4.2",
     "@godaddy/postcss-merge-selectors": "^1.0.1",
@@ -76,7 +86,7 @@
     "sass": "^1.85.0",
     "stylelint": "^15",
     "stylelint-config-godaddy": "^0.6.0",
-    "typescript": "^5.8.2",
+    "typescript": "^5.4.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.98.0"
   },
@@ -117,5 +127,19 @@
   "eslintIgnore": [
     "coverage/",
     "build/"
-  ]
+  ],
+  "resolutions": {
+    "@svgr/webpack": "^8.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-use": "^17.2.1",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.38",
+    "@craco/craco": "^7.1.0",
+    "json5": "^2.2.3",
+    "typescript": "^5.4.3",
+    "@aws-amplify/core": "6.5.3",
+    "@aws-amplify/storage": "6.6.16",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }

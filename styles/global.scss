@@ -11,6 +11,12 @@ it is recommended to import those directly to `pages/_app.js`
 */
 @import '~@ux/intents/lib/index';
 
+html, body, #__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 code {
   font-size: calc(#{$ux-text-fontSize} * .9);
   color: $ux-boxLowContrast-foregroundColor;
