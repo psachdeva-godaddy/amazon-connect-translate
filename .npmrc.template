@@ -1,0 +1,4 @@
+//gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/:_authToken={{ARTIFACTORY_SAAS_TOKEN}}
+//gdartifactory1.jfrog.io/artifactory/api/npm/npm-digital-care-apps-local/:_authToken={{ARTIFACTORY_SAAS_TOKEN}}
+//registry=https://gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/
+always-auth=true
